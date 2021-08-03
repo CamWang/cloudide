@@ -1,0 +1,25 @@
+{
+  "name": "cloudide",
+  "version": "1.0.0",
+  "description": "A cloud ide for testing judger of Mirage",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ide:cp": "cp ../mirage/core/build/Release/inferno.node backend/src/core/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamWang/cloudide.git"
+  },
+  "keywords": [
+    "node.js",
+    "node-addon",
+    "c++"
+  ],
+  "author": "cam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CamWang/cloudide/issues"
+  },
+  "homepage": "https://github.com/CamWang/cloudide#readme"
+}
