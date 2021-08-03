@@ -1,22 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <n-config-provider :theme="darkTheme">
+    <Header></Header>
+    <Main></Main>
+  </n-config-provider>
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import 'vfonts/Lato.css'
+import 'vfonts/FiraCode.css'
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
+import { darkTheme, NConfigProvider } from 'naive-ui'
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
+  export default {
+    components: {
+      NConfigProvider,
+      Header,
+      Main
+    },
+    setup() {
+      return {
+        darkTheme
+      }
+    }
+  }
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;  
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: v-sans, v-mono, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.n-config-provider {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 </style>
