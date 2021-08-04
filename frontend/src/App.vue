@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import 'vfonts/Lato.css'
 import 'vfonts/FiraCode.css'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
@@ -45,7 +44,7 @@ html, body {
 #app {
   height: 100%;
   box-sizing: border-box;
-  font-family: v-sans, v-mono, sans-serif;
+  font-family: v-mono, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -14,8 +14,8 @@
   import "codemirror-minified/addon/edit/matchbrackets";
   import "codemirror-minified/addon/selection/active-line";
   import "codemirror-minified/addon/hint/show-hint";
-  import "codemirror-minified/addon/hint/javascript-hint";
-  import "codemirror-minified/mode/javascript/javascript";
+  // import "codemirror-minified/addon/hint/javascript-hint";
+  // import "codemirror-minified/mode/javascript/javascript";
   import "codemirror-minified/mode/clike/clike";
 
   export default {

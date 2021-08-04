@@ -7,8 +7,9 @@
     </div>
     <div class="select">
       <n-dropdown trigger="hover" @select="handleSelect" :options="options">
-        <n-button>{{ language.label }}</n-button>
+        <n-button class="lang-button">{{ language.label }}</n-button>
       </n-dropdown>
+      <n-button class="run-button" type="primary">RUN</n-button>
     </div>
   </div>
 </template>
@@ -42,16 +43,16 @@ import { ref } from 'vue'
             key: 'cpp',
             mode: 'text/x-c++src'
           },
-          {
-            label: 'Java',
-            key: 'java',
-            mode: 'text/x-java'
-          },
-          {
-            label: 'JavaScript',
-            key: 'js',
-            mode: 'text/javascript'
-          }
+          // {
+          //   label: 'Java',
+          //   key: 'java',
+          //   mode: 'text/x-java'
+          // },
+          // {
+          //   label: 'JavaScript',
+          //   key: 'js',
+          //   mode: 'text/javascript'
+          // }
         ]);
       
       return {
@@ -85,5 +86,14 @@ import { ref } from 'vue'
 .select {
   margin-left: auto;
   margin-right: 1.5rem;
+}
+
+.lang-button {
+  padding: 0 1rem;
+}
+
+.run-button {
+  padding: 0 1rem;
+  margin-left: 1rem;
 }
 </style>

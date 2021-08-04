@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && rm -rf ../backend/dist && cp -r dist ../backend",
     "serve": "vite preview"
   },
   "dependencies": {
