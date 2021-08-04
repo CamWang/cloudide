@@ -9,7 +9,7 @@
       <n-dropdown trigger="hover" @select="handleSelect" :options="options">
         <n-button class="lang-button">{{ language.label }}</n-button>
       </n-dropdown>
-      <n-button class="run-button" type="primary">RUN</n-button>
+      <n-button @click="submit" class="run-button" type="primary">RUN</n-button>
     </div>
   </div>
 </template>
@@ -17,6 +17,7 @@
 <script>
 import { NDropdown, NButton } from 'naive-ui'
 import { ref } from 'vue'
+import { Submit } from '../api/ide';
 
   export default {
     props: {
@@ -61,6 +62,11 @@ import { ref } from 'vue'
         handleSelect (key) {
           language.value = options.value.find(element => element.key === key);
           emit('update:mode', language.value.mode);
+        },
+        submit() {
+          Submit({
+            uid: window.socket.id
+          })
         }
       }
     }

@@ -1,28 +1,26 @@
 <template>
   <n-config-provider :theme="darkTheme">
-    <Header v-model:mode="mode"></Header>
-    <Main v-model:mode="mode"></Main>
+    <n-notification-provider>
+      <Ide></Ide>
+    </n-notification-provider>
   </n-config-provider>
 </template>
 
 <script>
 import 'vfonts/FiraCode.css'
-import Header from './components/Header.vue'
-import Main from './components/Main.vue'
-import { darkTheme, NConfigProvider } from 'naive-ui'
+import { darkTheme, NConfigProvider, NNotificationProvider } from 'naive-ui'
 import { ref } from 'vue'
+import Ide from './view/Ide.vue';
 
   export default {
     components: {
       NConfigProvider,
-      Header,
-      Main
+      NNotificationProvider,
+      Ide
     },
     setup() {
-      let mode = ref("text/x-csrc");
       return {
         darkTheme,
-        mode
       }
     }
   }

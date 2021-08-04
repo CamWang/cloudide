@@ -24,6 +24,8 @@ function getData(url) {
   })
 }
 
-export default {
-  submit: data => postData(`${window.baseUrl}/submit`, data),
+const Submit = data => postData(`${window.baseUrl}/submit`, data);
+
+export {
+  Submit
 }
