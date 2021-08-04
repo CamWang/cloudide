@@ -18,35 +18,48 @@ import { NDropdown, NButton } from 'naive-ui'
 import { ref } from 'vue'
 
   export default {
+    props: {
+      mode: {
+        type: String,
+        required: true,
+        default: "text/x-csrc"
+      }
+    },
     components: {
       NDropdown,
       NButton
     },
-    setup() {
-      let language = ref({label: 'C', key: 'c'});
+    setup(props, { emit }) {
+      let language = ref({label: 'C', key: 'c', mode: 'text/x-csrc'});
       let options = ref([
           {
             label: 'C',
             key: 'c',
+            mode: 'text/x-csrc'
           },
           {
             label: 'C++',
-            key: "cpp"
+            key: 'cpp',
+            mode: 'text/x-c++src'
           },
           {
             label: 'Java',
-            key: 'java'
+            key: 'java',
+            mode: 'text/x-java'
           },
           {
             label: 'JavaScript',
-            key: 'js'
+            key: 'js',
+            mode: 'text/javascript'
           }
-        ])
+        ]);
+      
       return {
         options,
         language,
         handleSelect (key) {
           language.value = options.value.find(element => element.key === key);
+          emit('update:mode', language.value.mode);
         }
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <n-config-provider :theme="darkTheme">
-    <Header></Header>
-    <Main></Main>
+    <Header v-model:mode="mode"></Header>
+    <Main v-model:mode="mode"></Main>
   </n-config-provider>
 </template>
 
@@ -11,6 +11,7 @@ import 'vfonts/FiraCode.css'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import { darkTheme, NConfigProvider } from 'naive-ui'
+import { ref } from 'vue'
 
   export default {
     components: {
@@ -19,8 +20,10 @@ import { darkTheme, NConfigProvider } from 'naive-ui'
       Main
     },
     setup() {
+      let mode = ref("text/x-csrc");
       return {
-        darkTheme
+        darkTheme,
+        mode
       }
     }
   }
@@ -28,6 +31,7 @@ import { darkTheme, NConfigProvider } from 'naive-ui'
 
 <style>
 html, body {
+  overflow: hidden;
   height: 100%;
   margin: 0;
   padding: 0;
